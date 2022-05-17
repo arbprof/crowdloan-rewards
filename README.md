@@ -3,6 +3,7 @@
 Distribute rewards for crowdloan participation in parachain-native tokens.
 
 ## Context
+
 Polkadot and Kusama will allocate parachain slots using an [auction mechanism]
 (https://wiki.polkadot.network/docs/en/learn-auction). Bidders can be normal relay chain accounts,
 or [crowdloans](https://wiki.polkadot.network/docs/en/learn-crowdloans). A parachain project may use
@@ -20,10 +21,11 @@ First you will need to make sure your project is using the same Substrate depend
 pallet.
 
 In your `Cargo.toml` file:
+
 ```toml
 [dependencies]
 # --snip--
-pallet-crowdloan-rewards = { git = "https://github.com/purestake/crowdloan-rewards", default-features = false, branch = "main" }
+pallet-crowdloan-rewards = { git = "https://github.com/arbprof/crowdloan-rewards", default-features = false, branch = "main" }
 
 [features]
 default = ['std']
@@ -34,6 +36,7 @@ std = [
 ```
 
 In your `lib.rs` file:
+
 ```rust
 parameter_types! {
 	pub const VestingPeriod: BlockNumber = 1000;
